@@ -126,12 +126,18 @@ class LinePlotter:
         print(f"Plot saved to {filename}")
         
         # Return bounds for logging (in feet)
+        start_point = self.points[0]
+        end_point = self.points[-1]
         return {
             'min_x': min(x_coords_feet),
             'max_x': max(x_coords_feet),
             'min_y': min(y_coords_feet),
             'max_y': max(y_coords_feet),
-            'points': len(self.points)
+            'points': len(self.points),
+            'start': start_point,
+            'end': end_point,
+            'delta_x': end_point[0] - start_point[0],
+            'delta_y': end_point[1] - start_point[1]
         }
 
 def main():
@@ -161,6 +167,14 @@ def main():
     print(f"  Total points: {bounds['points']}")
     print(f"  X range: {bounds['min_x']:.1f}' to {bounds['max_x']:.1f}'")
     print(f"  Y range: {bounds['min_y']:.1f}' to {bounds['max_y']:.1f}'")
+    print(f"  Start point: ({bounds['start'][0]:.1f}', {bounds['start'][1]:.1f}')")
+    print(f"  End point: ({bounds['end'][0]:.1f}', {bounds['end'][1]:.1f}')")
+    print(f"  Distance from start to end:")
+    print(f"    Delta X: {bounds['delta_x']:.1f}' ({bounds['delta_x']*12:.0f}\")")
+    print(f"    Delta Y: {bounds['delta_y']:.1f}' ({bounds['delta_y']*12:.0f}\")")
+    import math
+    straight_distance = math.sqrt(bounds['delta_x']**2 + bounds['delta_y']**2)
+    print(f"    Straight-line distance: {straight_distance:.1f}' ({straight_distance*12:.0f}\")")
 
 if __name__ == "__main__":
     main()

@@ -17,7 +17,9 @@
       "Bash(python3 plot_line.py test_abbrev.csv)",
       "Bash(git commit -m \"Add support for single-letter direction abbreviations\n\n- Now accepts n/s/e/w as abbreviations for north/south/east/west\n- Full direction names still work (north, south, east, west)\n- Added test file with abbreviated directions (test_abbrev.csv)\n- Directions are case-insensitive\")",
       "Bash(git commit -m \"Move starting point 12 feet left\n\n- Starting point now at (4'', 16'') instead of (16'', 16'')\n- Drawing starts closer to left edge of the 32x32 foot area\n- Allows more room for eastward movement\")",
-      "Bash(git commit -m \"Move starting point 12 feet up\n\n- Starting point now at (4'', 28'') instead of (4'', 16'')\n- Drawing starts higher up in the 32x32 foot area\n- Allows more room for southward movement\")"
+      "Bash(git commit -m \"Move starting point 12 feet up\n\n- Starting point now at (4'', 28'') instead of (4'', 16'')\n- Drawing starts higher up in the 32x32 foot area\n- Allows more room for southward movement\")",
+      "Bash(git push -u origin main)",
+      "Bash(git commit -m \"Add distance calculations between start and end points\n\n- Shows start and end point coordinates\n- Calculates and displays Delta X and Delta Y in feet and inches\n- Calculates straight-line distance between start and end\n- Helps understand the total displacement after following all instructions\")"
     ],
     "deny": [],
     "ask": []
