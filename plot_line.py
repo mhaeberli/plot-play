@@ -182,9 +182,13 @@ class LinePlotter:
         ax.set_xticks(np.arange(0, 8.5, 1.0))
         ax.set_yticks(np.arange(0, 11, 1.0))
         
+        # Set tick labels to show feet values
+        ax.set_xticklabels([f"{i*4}'" for i in range(9)])
+        ax.set_yticklabels([f"{i*4}'" for i in range(11)])
+        
         # Labels and title
-        ax.set_xlabel('X (East →)')
-        ax.set_ylabel('Y (North ↑)')
+        ax.set_xlabel('X (East →) - feet')
+        ax.set_ylabel('Y (North ↑) - feet')
         ax.set_title('Line Plot (32\'×32\' drawing area)')
         ax.legend()
         
@@ -192,12 +196,6 @@ class LinePlotter:
         ax.text(0.02, 0.98, 'Scale: 1" on paper = 4\' in drawing\nDrawing area: 32\'×32\'', 
                 transform=ax.transAxes, fontsize=10, verticalalignment='top',
                 bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.5))
-        
-        # Add feet labels on secondary axes
-        for i in range(0, 9):
-            ax.text(i, -0.15, f'{i*4}\'', ha='center', fontsize=8)
-        for i in range(0, 11):
-            ax.text(-0.15, i, f'{i*4}\'', ha='right', fontsize=8)
         
         # Save to PDF
         with PdfPages(filename) as pdf:
