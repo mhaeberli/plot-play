@@ -24,6 +24,13 @@ class LinePlotter:
         self.current_y = 28.0  # Start at 28 feet from bottom (real world)
         self.points = [(self.current_x, self.current_y)]
         
+        # Track cumulative distances for each direction
+        self.cumulative_north = 0.0
+        self.cumulative_south = 0.0
+        self.cumulative_east = 0.0
+        self.cumulative_west = 0.0
+        self.step_count = 0
+        
     def turn_and_go(self, direction, distance_inches):
         """Move in the specified direction by the given distance in inches."""
         direction = direction.lower()
@@ -47,8 +54,26 @@ class LinePlotter:
         else:
             raise ValueError(f"Unknown direction: {direction}")
         
+        # Track cumulative distances
+        if direction == 'north':
+            self.cumulative_north += distance_inches
+        elif direction == 'south':
+            self.cumulative_south += distance_inches
+        elif direction == 'east':
+            self.cumulative_east += distance_inches
+        elif direction == 'west':
+            self.cumulative_west += distance_inches
+        
         self.points.append((self.current_x, self.current_y))
-        print(f"Moved {direction} {distance_inches}\" to ({self.current_x:.1f}', {self.current_y:.1f}')")
+        self.step_count += 1
+        
+        # Calculate net distances
+        net_x = (self.cumulative_east - self.cumulative_west) / 12.0
+        net_y = (self.cumulative_north - self.cumulative_south) / 12.0
+        
+        print(f"P{self.step_count-1}→P{self.step_count}: Moved {direction} {distance_inches}\" to ({self.current_x:.1f}', {self.current_y:.1f}')")
+        print(f"  Cumulative: N:{self.cumulative_north:.1f}\" S:{self.cumulative_south:.1f}\" E:{self.cumulative_east:.1f}\" W:{self.cumulative_west:.1f}\"")
+        print(f"  Net from start: X={net_x:.1f}' Y={net_y:.1f}'")
     
     def parse_instructions(self, instructions):
         """Parse instructions from a list of (direction, distance) tuples."""
@@ -179,18 +204,26 @@ def main():
     bounds = plotter.plot_to_pdf('line_plot.pdf')
     
     # Print summary
-    print("\nSummary:")
+    print("\n" + "="*60)
+    print("SUMMARY:")
+    print("="*60)
     print(f"  Total points: {bounds['points']}")
     print(f"  X range: {bounds['min_x']:.1f}' to {bounds['max_x']:.1f}'")
     print(f"  Y range: {bounds['min_y']:.1f}' to {bounds['max_y']:.1f}'")
     print(f"  Start point: ({bounds['start'][0]:.1f}', {bounds['start'][1]:.1f}')")
     print(f"  End point: ({bounds['end'][0]:.1f}', {bounds['end'][1]:.1f}')")
-    print(f"  Distance from start to end:")
+    print(f"\n  Total distances traveled:")
+    print(f"    North: {plotter.cumulative_north:.1f}\" ({plotter.cumulative_north/12:.1f}')")
+    print(f"    South: {plotter.cumulative_south:.1f}\" ({plotter.cumulative_south/12:.1f}')")
+    print(f"    East: {plotter.cumulative_east:.1f}\" ({plotter.cumulative_east/12:.1f}')")
+    print(f"    West: {plotter.cumulative_west:.1f}\" ({plotter.cumulative_west/12:.1f}')")
+    print(f"\n  Net displacement from start:")
     print(f"    Delta X: {bounds['delta_x']:.1f}' ({bounds['delta_x']*12:.0f}\")")
     print(f"    Delta Y: {bounds['delta_y']:.1f}' ({bounds['delta_y']*12:.0f}\")")
     import math
     straight_distance = math.sqrt(bounds['delta_x']**2 + bounds['delta_y']**2)
     print(f"    Straight-line distance: {straight_distance:.1f}' ({straight_distance*12:.0f}\")")
+    print("="*60)
 
 if __name__ == "__main__":
     main()
