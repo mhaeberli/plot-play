@@ -28,7 +28,8 @@
       "Bash(git remote add origin https://github.com/mhaeberli/plot-play.git)",
       "Bash(git commit -m \"Add segment length annotations to plot\n\n- Each line segment now shows its length in feet and decimal inches\n- Format: feet''-inches\"\" (e.g., 12''-6.5\"\")\n- Annotations placed at segment midpoints with perpendicular offset\n- Red text with white background for visibility\n- Helps verify measurements match input distances\")",
       "Bash(git commit -m \"Fix axis labels to show only feet values\n\n- Removed duplicate axis labels (was showing both inches and feet)\n- Now shows only feet values (0'', 4'', 8'', 12'', etc.)\n- Clarified axis labels with ''- feet'' suffix\n- Cleaner, less cluttered plot appearance\")",
-      "Bash(git push)"
+      "Bash(git push)",
+      "Bash(git commit -m \"Update segment length format to use space instead of hyphen\n\n- Changed format from feet''-inches\"\" to feet'' inches\"\"\n- Example: 6'' 3.2\"\" instead of 6''-3.2\"\"\n- Cleaner, more standard formatting for measurements\")"
     ],
     "deny": [],
     "ask": []

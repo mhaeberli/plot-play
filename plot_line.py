@@ -144,11 +144,11 @@ class LinePlotter:
             segment_length_ft = math.sqrt(dx_ft**2 + dy_ft**2)
             segment_length_inches = segment_length_ft * 12
             
-            # Format as feet and decimal inches (e.g., "12'-6.5"")
+            # Format as feet and decimal inches (e.g., "6' 3.2"")
             feet_whole = int(segment_length_inches // 12)
             inches_decimal = segment_length_inches % 12
             if feet_whole > 0:
-                length_text = f"{feet_whole}'-{inches_decimal:.1f}\""
+                length_text = f"{feet_whole}' {inches_decimal:.1f}\""
             else:
                 length_text = f"{inches_decimal:.1f}\""
             
