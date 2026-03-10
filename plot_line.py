@@ -67,14 +67,6 @@ class LinePlotter:
         
         self.points.append((self.current_x, self.current_y))
         self.step_count += 1
-        
-        # Calculate net distances
-        net_x = (self.cumulative_east - self.cumulative_west) / 12.0
-        net_y = (self.cumulative_north - self.cumulative_south) / 12.0
-        
-        print(f"P{self.step_count-1}→P{self.step_count}: Moved {direction} {distance_inches}\" to ({self.current_x:.1f}', {self.current_y:.1f}')")
-        print(f"  Cumulative: N:{self.cumulative_north:.1f}\" S:{self.cumulative_south:.1f}\" E:{self.cumulative_east:.1f}\" W:{self.cumulative_west:.1f}\"")
-        print(f"  Net from start: X={net_x:.1f}' Y={net_y:.1f}'")
     
     def parse_instructions(self, instructions):
         """Parse instructions from a list of (direction, distance) tuples."""
