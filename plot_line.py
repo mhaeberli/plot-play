@@ -27,6 +27,11 @@ class LinePlotter:
         # Convert inches to feet for internal storage
         distance_feet = distance_inches / 12.0
         
+        # Map single-letter abbreviations to full names
+        direction_map = {'n': 'north', 's': 'south', 'e': 'east', 'w': 'west'}
+        if direction in direction_map:
+            direction = direction_map[direction]
+        
         if direction == 'north':
             self.current_y += distance_feet
         elif direction == 'south':

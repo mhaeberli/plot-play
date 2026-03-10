@@ -13,7 +13,9 @@
       "Bash(git commit -m \"Fix: Install matplotlib for default Python 3.12.5\n\n- Installed matplotlib for the system''s default python3 (/usr/local/bin/python3)\n- Program now works with standard ''python3 plot_line.py'' command\n- Successfully tested with sample instructions\")",
       "Bash(git commit -m \"Rescale drawing to fit 32x32 foot area on 8.5x11 page\n\n- New scale: 1 inch on paper = 4 feet in drawing (0.25 inches per foot)\n- Starting point moved to center of 32x32 area (16'', 16'')\n- Input units changed from inches to feet\n- Added grid lines every 4 feet (1 inch on paper)\n- Added feet labels on axes for easier reading\n- Updated all coordinate systems and display labels\")",
       "Bash(python3 plot_line.py instructions.csv)",
-      "Bash(git commit -m \"Change input units back to inches while maintaining scale\n\n- Input distances now in inches (automatically converted to feet internally)\n- Scale remains 1 inch on paper = 4 feet in drawing\n- Updated test instructions to use inches (e.g., 48 inches instead of 4 feet)\n- CSV files should now specify distances in inches\")"
+      "Bash(git commit -m \"Change input units back to inches while maintaining scale\n\n- Input distances now in inches (automatically converted to feet internally)\n- Scale remains 1 inch on paper = 4 feet in drawing\n- Updated test instructions to use inches (e.g., 48 inches instead of 4 feet)\n- CSV files should now specify distances in inches\")",
+      "Bash(python3 plot_line.py test_abbrev.csv)",
+      "Bash(git commit -m \"Add support for single-letter direction abbreviations\n\n- Now accepts n/s/e/w as abbreviations for north/south/east/west\n- Full direction names still work (north, south, east, west)\n- Added test file with abbreviated directions (test_abbrev.csv)\n- Directions are case-insensitive\")"
     ],
     "deny": [],
     "ask": []
