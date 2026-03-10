@@ -13,11 +13,12 @@ class LinePlotter:
         # Scale: 8 inches / 32 feet = 0.25 inches per foot
         self.scale = 0.25  # 0.25 inches on paper = 1 foot in drawing
         
-        # Start 12 feet left of center (4 feet from left edge, 16 feet from bottom)
+        # Start 12 feet left of center and 12 feet up from center
+        # (4 feet from left edge, 28 feet from bottom)
         # Convert to paper inches: 4 feet * 0.25 = 1 inch from origin
         # With 0.5" margin, this is at 1.5" on paper
         self.current_x = 4.0   # Start at 4 feet from left (real world)
-        self.current_y = 16.0  # Start at 16 feet from bottom (real world)
+        self.current_y = 28.0  # Start at 28 feet from bottom (real world)
         self.points = [(self.current_x, self.current_y)]
         
     def turn_and_go(self, direction, distance_inches):

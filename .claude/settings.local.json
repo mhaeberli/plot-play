@@ -16,7 +16,8 @@
       "Bash(git commit -m \"Change input units back to inches while maintaining scale\n\n- Input distances now in inches (automatically converted to feet internally)\n- Scale remains 1 inch on paper = 4 feet in drawing\n- Updated test instructions to use inches (e.g., 48 inches instead of 4 feet)\n- CSV files should now specify distances in inches\")",
       "Bash(python3 plot_line.py test_abbrev.csv)",
       "Bash(git commit -m \"Add support for single-letter direction abbreviations\n\n- Now accepts n/s/e/w as abbreviations for north/south/east/west\n- Full direction names still work (north, south, east, west)\n- Added test file with abbreviated directions (test_abbrev.csv)\n- Directions are case-insensitive\")",
-      "Bash(git commit -m \"Move starting point 12 feet left\n\n- Starting point now at (4'', 16'') instead of (16'', 16'')\n- Drawing starts closer to left edge of the 32x32 foot area\n- Allows more room for eastward movement\")"
+      "Bash(git commit -m \"Move starting point 12 feet left\n\n- Starting point now at (4'', 16'') instead of (16'', 16'')\n- Drawing starts closer to left edge of the 32x32 foot area\n- Allows more room for eastward movement\")",
+      "Bash(git commit -m \"Move starting point 12 feet up\n\n- Starting point now at (4'', 28'') instead of (4'', 16'')\n- Drawing starts higher up in the 32x32 foot area\n- Allows more room for southward movement\")"
     ],
     "deny": [],
     "ask": []
