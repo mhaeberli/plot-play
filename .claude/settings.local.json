@@ -19,7 +19,8 @@
       "Bash(git commit -m \"Move starting point 12 feet left\n\n- Starting point now at (4'', 16'') instead of (16'', 16'')\n- Drawing starts closer to left edge of the 32x32 foot area\n- Allows more room for eastward movement\")",
       "Bash(git commit -m \"Move starting point 12 feet up\n\n- Starting point now at (4'', 28'') instead of (4'', 16'')\n- Drawing starts higher up in the 32x32 foot area\n- Allows more room for southward movement\")",
       "Bash(git push -u origin main)",
-      "Bash(git commit -m \"Add distance calculations between start and end points\n\n- Shows start and end point coordinates\n- Calculates and displays Delta X and Delta Y in feet and inches\n- Calculates straight-line distance between start and end\n- Helps understand the total displacement after following all instructions\")"
+      "Bash(git commit -m \"Add distance calculations between start and end points\n\n- Shows start and end point coordinates\n- Calculates and displays Delta X and Delta Y in feet and inches\n- Calculates straight-line distance between start and end\n- Helps understand the total displacement after following all instructions\")",
+      "Bash(git commit -m \"Add automatic archiving of existing output files\n\n- Archives existing line_plot.pdf before creating a new one\n- Archive filename includes timestamp (YYYYMMDD_HHMMSS format)\n- Prevents accidental overwriting of previous plots\n- Shows archive filename in console output\")"
     ],
     "deny": [],
     "ask": []

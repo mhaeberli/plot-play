@@ -5,6 +5,9 @@ from matplotlib.backends.backend_pdf import PdfPages
 import csv
 import sys
 import numpy as np
+import os
+from datetime import datetime
+import shutil
 
 class LinePlotter:
     def __init__(self):
@@ -66,6 +69,19 @@ class LinePlotter:
     
     def plot_to_pdf(self, filename='plot.pdf'):
         """Create the plot and save as PDF."""
+        # Archive existing file if it exists
+        if os.path.exists(filename):
+            # Create timestamp
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            # Get file name and extension
+            base_name = os.path.splitext(filename)[0]
+            extension = os.path.splitext(filename)[1]
+            # Create archive filename
+            archive_name = f"{base_name}_archive_{timestamp}{extension}"
+            # Move the existing file to archive
+            shutil.move(filename, archive_name)
+            print(f"Archived existing file to: {archive_name}")
+        
         # Create figure with 8.5x11 inch size
         fig, ax = plt.subplots(figsize=(8.5, 11))
         
