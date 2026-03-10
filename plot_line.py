@@ -20,9 +20,12 @@ class LinePlotter:
         self.current_y = 16.0  # Start at 16 feet (real world)
         self.points = [(self.current_x, self.current_y)]
         
-    def turn_and_go(self, direction, distance_feet):
-        """Move in the specified direction by the given distance in feet."""
+    def turn_and_go(self, direction, distance_inches):
+        """Move in the specified direction by the given distance in inches."""
         direction = direction.lower()
+        
+        # Convert inches to feet for internal storage
+        distance_feet = distance_inches / 12.0
         
         if direction == 'north':
             self.current_y += distance_feet
@@ -36,7 +39,7 @@ class LinePlotter:
             raise ValueError(f"Unknown direction: {direction}")
         
         self.points.append((self.current_x, self.current_y))
-        print(f"Moved {direction} {distance_feet}' to ({self.current_x:.1f}', {self.current_y:.1f}')")
+        print(f"Moved {direction} {distance_inches}\" to ({self.current_x:.1f}', {self.current_y:.1f}')")
     
     def parse_instructions(self, instructions):
         """Parse instructions from a list of (direction, distance) tuples."""
@@ -135,12 +138,12 @@ def main():
         instructions = plotter.parse_csv(csv_file)
         plotter.parse_instructions(instructions)
     else:
-        # Use test instructions
+        # Use test instructions (in inches)
         print("Using test instructions:")
         test_instructions = [
-            ('north', 4),
-            ('east', 8),
-            ('north', 6)
+            ('north', 48),  # 4 feet = 48 inches
+            ('east', 96),   # 8 feet = 96 inches
+            ('north', 72)   # 6 feet = 72 inches
         ]
         plotter.parse_instructions(test_instructions)
     

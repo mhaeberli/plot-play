@@ -11,7 +11,9 @@
       "Bash(git commit -m \"Initial commit: Line plotting program with PDF output\n\n- Created plot_line.py for plotting lines based on directional instructions\n- Supports CSV input format with direction and distance columns\n- Outputs to PDF sized for 8.5x11 paper\n- Scale: 1 inch on paper = 1 foot in drawing\n- Starting point: 12 inches, 12 inches\n- Test CSV file included with sample instructions\")",
       "Bash(python3 -m pip install matplotlib)",
       "Bash(git commit -m \"Fix: Install matplotlib for default Python 3.12.5\n\n- Installed matplotlib for the system''s default python3 (/usr/local/bin/python3)\n- Program now works with standard ''python3 plot_line.py'' command\n- Successfully tested with sample instructions\")",
-      "Bash(git commit -m \"Rescale drawing to fit 32x32 foot area on 8.5x11 page\n\n- New scale: 1 inch on paper = 4 feet in drawing (0.25 inches per foot)\n- Starting point moved to center of 32x32 area (16'', 16'')\n- Input units changed from inches to feet\n- Added grid lines every 4 feet (1 inch on paper)\n- Added feet labels on axes for easier reading\n- Updated all coordinate systems and display labels\")"
+      "Bash(git commit -m \"Rescale drawing to fit 32x32 foot area on 8.5x11 page\n\n- New scale: 1 inch on paper = 4 feet in drawing (0.25 inches per foot)\n- Starting point moved to center of 32x32 area (16'', 16'')\n- Input units changed from inches to feet\n- Added grid lines every 4 feet (1 inch on paper)\n- Added feet labels on axes for easier reading\n- Updated all coordinate systems and display labels\")",
+      "Bash(python3 plot_line.py instructions.csv)",
+      "Bash(git commit -m \"Change input units back to inches while maintaining scale\n\n- Input distances now in inches (automatically converted to feet internally)\n- Scale remains 1 inch on paper = 4 feet in drawing\n- Updated test instructions to use inches (e.g., 48 inches instead of 4 feet)\n- CSV files should now specify distances in inches\")"
     ],
     "deny": [],
     "ask": []
