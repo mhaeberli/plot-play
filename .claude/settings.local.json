@@ -31,7 +31,8 @@
       "Bash(git push)",
       "Bash(git commit -m \"Update segment length format to use space instead of hyphen\n\n- Changed format from feet''-inches\"\" to feet'' inches\"\"\n- Example: 6'' 3.2\"\" instead of 6''-3.2\"\"\n- Cleaner, more standard formatting for measurements\")",
       "Bash(git commit -m \"Remove verbose diagnostic output during plotting\n\n- Removed per-step movement diagnostics (P0→P1, cumulative, net from start)\n- Kept comprehensive summary statistics at the end\n- Cleaner, less cluttered console output\n- PDF still contains all visual information including segment lengths\")",
-      "Bash(git commit -m \"Comment out diagnostic output instead of removing\n\n- Kept diagnostic code but commented out for easy re-enabling\n- Clean console output while preserving debugging capability\n- Can uncomment the print statements if detailed tracking is needed\")"
+      "Bash(git commit -m \"Comment out diagnostic output instead of removing\n\n- Kept diagnostic code but commented out for easy re-enabling\n- Clean console output while preserving debugging capability\n- Can uncomment the print statements if detailed tracking is needed\")",
+      "Bash(git commit -m \"Change output filename to match input CSV filename\n\n- Output PDF now uses same base name as input CSV file\n- xxx.csv → xxx.pdf\n- Archival system works with dynamic filenames\n- Default line_plot.pdf used when no input file provided\n- Maintains same archival timestamp naming convention\")"
     ],
     "deny": [],
     "ask": []

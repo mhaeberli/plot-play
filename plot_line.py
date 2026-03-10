@@ -228,6 +228,10 @@ def main():
         print(f"Reading instructions from {csv_file}")
         instructions = plotter.parse_csv(csv_file)
         plotter.parse_instructions(instructions)
+        
+        # Create PDF filename based on CSV filename
+        base_name = os.path.splitext(csv_file)[0]
+        pdf_filename = f"{base_name}.pdf"
     else:
         # Use test instructions (in inches)
         print("Using test instructions:")
@@ -237,9 +241,10 @@ def main():
             ('north', 72)   # 6 feet = 72 inches
         ]
         plotter.parse_instructions(test_instructions)
+        pdf_filename = 'line_plot.pdf'  # Default name for test instructions
     
     # Generate PDF
-    bounds = plotter.plot_to_pdf('line_plot.pdf')
+    bounds = plotter.plot_to_pdf(pdf_filename)
     
     # Print summary
     print("\n" + "="*60)
