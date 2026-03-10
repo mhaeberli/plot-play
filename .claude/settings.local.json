@@ -21,7 +21,12 @@
       "Bash(git push -u origin main)",
       "Bash(git commit -m \"Add distance calculations between start and end points\n\n- Shows start and end point coordinates\n- Calculates and displays Delta X and Delta Y in feet and inches\n- Calculates straight-line distance between start and end\n- Helps understand the total displacement after following all instructions\")",
       "Bash(git commit -m \"Add automatic archiving of existing output files\n\n- Archives existing line_plot.pdf before creating a new one\n- Archive filename includes timestamp (YYYYMMDD_HHMMSS format)\n- Prevents accidental overwriting of previous plots\n- Shows archive filename in console output\")",
-      "Bash(python3 plot_line.py \"BigRoom Dim spreadsheet - Big Room.csv\")"
+      "Bash(python3 plot_line.py \"BigRoom Dim spreadsheet - Big Room.csv\")",
+      "Bash(gh repo create plot-play --public --source=. --remote=origin --push)",
+      "Bash(git remote remove origin)",
+      "Bash(git remote set-url origin https://github.com/mhaeberli/plot-play.git)",
+      "Bash(git remote add origin https://github.com/mhaeberli/plot-play.git)",
+      "Bash(git commit -m \"Add segment length annotations to plot\n\n- Each line segment now shows its length in feet and decimal inches\n- Format: feet''-inches\"\" (e.g., 12''-6.5\"\")\n- Annotations placed at segment midpoints with perpendicular offset\n- Red text with white background for visibility\n- Helps verify measurements match input distances\")"
     ],
     "deny": [],
     "ask": []

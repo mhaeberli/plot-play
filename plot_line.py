@@ -8,6 +8,7 @@ import numpy as np
 import os
 from datetime import datetime
 import shutil
+import math
 
 class LinePlotter:
     def __init__(self):
@@ -130,6 +131,45 @@ class LinePlotter:
             x = x_ft * self.scale
             y = y_ft * self.scale
             ax.annotate(f'P{i}', (x, y), xytext=(2, 2), textcoords='offset points', fontsize=8)
+        
+        # Add segment length annotations
+        for i in range(len(self.points) - 1):
+            # Get start and end points of segment
+            x1_ft, y1_ft = self.points[i]
+            x2_ft, y2_ft = self.points[i + 1]
+            
+            # Calculate segment length
+            dx_ft = x2_ft - x1_ft
+            dy_ft = y2_ft - y1_ft
+            segment_length_ft = math.sqrt(dx_ft**2 + dy_ft**2)
+            segment_length_inches = segment_length_ft * 12
+            
+            # Format as feet and decimal inches (e.g., "12'-6.5"")
+            feet_whole = int(segment_length_inches // 12)
+            inches_decimal = segment_length_inches % 12
+            if feet_whole > 0:
+                length_text = f"{feet_whole}'-{inches_decimal:.1f}\""
+            else:
+                length_text = f"{inches_decimal:.1f}\""
+            
+            # Calculate midpoint for annotation placement
+            mid_x = (x1_ft + x2_ft) / 2 * self.scale
+            mid_y = (y1_ft + y2_ft) / 2 * self.scale
+            
+            # Calculate offset perpendicular to segment for better readability
+            if dx_ft != 0 or dy_ft != 0:
+                # Normalize the perpendicular vector
+                length = math.sqrt(dx_ft**2 + dy_ft**2)
+                perp_x = -dy_ft / length * 0.15  # Scale down for paper inches
+                perp_y = dx_ft / length * 0.15
+            else:
+                perp_x, perp_y = 0.1, 0.1
+            
+            # Add the annotation
+            ax.annotate(length_text, (mid_x, mid_y), 
+                       xytext=(mid_x + perp_x, mid_y + perp_y),
+                       fontsize=7, color='red', ha='center',
+                       bbox=dict(boxstyle='round,pad=0.2', facecolor='white', alpha=0.8))
         
         # Set axis properties
         # 32 feet * 0.25 = 8 inches, leave 0.25" margins on each side
