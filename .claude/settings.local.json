@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 plot_line.py)",
+      "Bash(pip3 install matplotlib)",
+      "Bash(/usr/bin/python3 -m pip install matplotlib --user)",
+      "Bash(/usr/bin/python3 plot_line.py)",
+      "Bash(/usr/bin/python3 plot_line.py instructions.csv)",
+      "Bash(git init)",
+      "Bash(git add -A)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
