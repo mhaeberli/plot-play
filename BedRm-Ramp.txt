@@ -1,0 +1,23 @@
+Reading instructions from BedRm-Ramp.csv
+Plot saved to BedRm-Ramp.pdf
+
+============================================================
+SUMMARY:
+============================================================
+  Total points: 9
+  X range: 4.0' to 13.9'
+  Y range: 14.9' to 28.0'
+  Start point: (4.0', 28.0')
+  End point: (4.0', 28.0')
+
+  Total distances traveled:
+    North: 156.8" (13.1')
+    South: 156.8" (13.1')
+    East: 118.2" (9.9')
+    West: 118.2" (9.9')
+
+  Net displacement from start:
+    Delta X: 0.0' (0")
+    Delta Y: -0.0' (-0")
+    Straight-line distance: 0.0' (0")
+============================================================

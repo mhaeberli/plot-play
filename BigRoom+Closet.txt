@@ -1,0 +1,23 @@
+Reading instructions from BigRoom+Closet.csv
+Plot saved to BigRoom+Closet.pdf
+
+============================================================
+SUMMARY:
+============================================================
+  Total points: 17
+  X range: 3.7' to 33.0'
+  Y range: 7.3' to 36.6'
+  Start point: (4.0', 28.0')
+  End point: (3.7', 28.1')
+
+  Total distances traveled:
+    North: 380.9" (31.7')
+    South: 380.2" (31.7')
+    East: 347.8" (29.0')
+    West: 351.2" (29.3')
+
+  Net displacement from start:
+    Delta X: -0.3' (-3")
+    Delta Y: 0.1' (1")
+    Straight-line distance: 0.3' (4")
+============================================================

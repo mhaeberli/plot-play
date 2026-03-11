@@ -1,0 +1,23 @@
+Reading instructions from Bath-Ramp.csv
+Plot saved to Bath-Ramp.pdf
+
+============================================================
+SUMMARY:
+============================================================
+  Total points: 11
+  X range: 4.0' to 10.7'
+  Y range: 23.0' to 28.2'
+  Start point: (4.0', 28.0')
+  End point: (4.0', 28.0')
+
+  Total distances traveled:
+    North: 62.2" (5.2')
+    South: 61.9" (5.2')
+    East: 80.0" (6.7')
+    West: 80.5" (6.7')
+
+  Net displacement from start:
+    Delta X: -0.0' (-1")
+    Delta Y: 0.0' (0")
+    Straight-line distance: 0.1' (1")
+============================================================

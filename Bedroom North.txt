@@ -1,0 +1,23 @@
+Reading instructions from Bedroom North.csv
+Plot saved to Bedroom North.pdf
+
+============================================================
+SUMMARY:
+============================================================
+  Total points: 8
+  X range: 4.0' to 16.7'
+  Y range: 16.0' to 28.0'
+  Start point: (4.0', 28.0')
+  End point: (4.0', 28.0')
+
+  Total distances traveled:
+    North: 144.5" (12.0')
+    South: 144.5" (12.0')
+    East: 152.8" (12.7')
+    West: 152.8" (12.7')
+
+  Net displacement from start:
+    Delta X: 0.0' (0")
+    Delta Y: 0.0' (0")
+    Straight-line distance: 0.0' (0")
+============================================================
