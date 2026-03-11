@@ -2,10 +2,12 @@
 
 This file tracks all user prompts and changes throughout the project development.
 
+**Note:** Prompts from Session 1 are reconstructed based on commit messages and code changes, as the actual prompts were not saved. Session 2 prompts are actual verbatim prompts.
+
 ## Session 1: March 10, 2026
 
 ### Initial Project Creation
-**Prompt:** "Create a line plotting program with PDF output"
+**Prompt (reconstructed):** "Create a python program that reads a CSV file with direction and distance columns, and plots the path as a line on a PDF. Start at position 12 inches, 12 inches. Scale should be 1 inch = 1 foot on 8.5x11 paper."
 **Commit:** 07f441a - Initial commit: Line plotting program with PDF output
 **Changes:**
 - Created plot_line.py for plotting lines based on directional instructions
@@ -15,14 +17,14 @@ This file tracks all user prompts and changes throughout the project development
 - Starting point: 12 inches, 12 inches
 
 ### Fix Python Environment
-**Prompt:** [Implicit - fix matplotlib installation]
+**Prompt (reconstructed):** [Error occurred running the program - matplotlib not found]
 **Commit:** 39392de - Fix: Install matplotlib for default Python 3.12.5
 **Changes:**
 - Installed matplotlib for system's default python3
 - Program now works with standard 'python3 plot_line.py' command
 
 ### Rescale Drawing
-**Prompt:** "Rescale drawing to fit 32x32 foot area on 8.5x11 page"
+**Prompt (reconstructed):** "Can you rescale this to show a 32x32 foot area on the 8.5x11 page? Also change the units from inches to feet and add grid lines."
 **Commit:** fa07c9a - Rescale drawing to fit 32x32 foot area on 8.5x11 page
 **Changes:**
 - New scale: 1 inch on paper = 4 feet in drawing (0.25 inches per foot)
@@ -32,7 +34,7 @@ This file tracks all user prompts and changes throughout the project development
 - Added feet labels on axes for easier reading
 
 ### Change Input Units
-**Prompt:** "Change input units back to inches while maintaining scale"
+**Prompt (reconstructed):** "Actually, let's keep the input in inches instead of feet. The CSV should use inches but the scale should stay the same."
 **Commit:** e9e6cb2 - Change input units back to inches while maintaining scale
 **Changes:**
 - Input distances now in inches (automatically converted to feet internally)
@@ -40,7 +42,7 @@ This file tracks all user prompts and changes throughout the project development
 - CSV files should now specify distances in inches
 
 ### Add Direction Abbreviations
-**Prompt:** "Add support for single-letter direction abbreviations"
+**Prompt (reconstructed):** "Can you make it accept single letter abbreviations like n, s, e, w instead of typing out north, south, east, west?"
 **Commit:** ea3d70a - Add support for single-letter direction abbreviations
 **Changes:**
 - Now accepts n/s/e/w as abbreviations for north/south/east/west
@@ -48,7 +50,7 @@ This file tracks all user prompts and changes throughout the project development
 - Directions are case-insensitive
 
 ### Move Starting Point Left
-**Prompt:** "Move starting point 12 feet left"
+**Prompt (reconstructed):** "Move the starting point 12 feet to the left"
 **Commit:** 2b054e2 - Move starting point 12 feet left
 **Changes:**
 - Starting point now at (4', 16') instead of (16', 16')
@@ -56,7 +58,7 @@ This file tracks all user prompts and changes throughout the project development
 - Allows more room for eastward movement
 
 ### Move Starting Point Up
-**Prompt:** "Move starting point 12 feet up"
+**Prompt (reconstructed):** "Now move it 12 feet up"
 **Commit:** cd7f3c2 - Move starting point 12 feet up
 **Changes:**
 - Starting point now at (4', 28') instead of (4', 16')
@@ -64,7 +66,7 @@ This file tracks all user prompts and changes throughout the project development
 - Allows more room for southward movement
 
 ### Add Distance Calculations
-**Prompt:** "Add distance calculations between start and end points"
+**Prompt (reconstructed):** "Can you add calculations showing the distance between the start and end points? Show delta X, delta Y, and the straight line distance."
 **Commit:** b5fc828 - Add distance calculations between start and end points
 **Changes:**
 - Shows start and end point coordinates
@@ -73,7 +75,7 @@ This file tracks all user prompts and changes throughout the project development
 - Helps understand the total displacement after following all instructions
 
 ### Add File Archiving
-**Prompt:** "Add automatic archiving of existing output files"
+**Prompt (reconstructed):** "Can you make it archive the existing PDF before creating a new one so we don't lose previous plots?"
 **Commit:** 66999b0 - Add automatic archiving of existing output files
 **Changes:**
 - Archives existing line_plot.pdf before creating a new one
@@ -82,7 +84,7 @@ This file tracks all user prompts and changes throughout the project development
 - Shows archive filename in console output
 
 ### Add Segment Annotations
-**Prompt:** "Add segment length annotations to plot"
+**Prompt (reconstructed):** "Add length annotations to each line segment on the plot showing the distance in feet and inches"
 **Commit:** b84cee2 - Add segment length annotations to plot
 **Changes:**
 - Each line segment now shows its length in feet and decimal inches
@@ -91,7 +93,7 @@ This file tracks all user prompts and changes throughout the project development
 - Red text with white background for visibility
 
 ### Fix Axis Labels
-**Prompt:** "Fix axis labels to show only feet values"
+**Prompt (reconstructed):** "The axis labels are showing both inches and feet - can you fix it to just show feet?"
 **Commit:** 9333e5a - Fix axis labels to show only feet values
 **Changes:**
 - Removed duplicate axis labels (was showing both inches and feet)
@@ -99,7 +101,7 @@ This file tracks all user prompts and changes throughout the project development
 - Clarified axis labels with '- feet' suffix
 
 ### Update Segment Format
-**Prompt:** "Update segment length format to use space instead of hyphen"
+**Prompt (reconstructed):** "Change the segment length format from feet'-inches" to feet' inches" (space instead of hyphen)"
 **Commit:** 44419ef - Update segment length format to use space instead of hyphen
 **Changes:**
 - Changed format from feet'-inches" to feet' inches"
@@ -107,7 +109,7 @@ This file tracks all user prompts and changes throughout the project development
 - Cleaner, more standard formatting for measurements
 
 ### Remove Verbose Output
-**Prompt:** "Remove verbose diagnostic output during plotting"
+**Prompt (reconstructed):** "Can you remove all the verbose diagnostic output? It's too much text. Just keep the summary at the end."
 **Commit:** 3aac098 - Remove verbose diagnostic output during plotting
 **Changes:**
 - Removed per-step movement diagnostics
@@ -115,14 +117,14 @@ This file tracks all user prompts and changes throughout the project development
 - Cleaner, less cluttered console output
 
 ### Comment Out Diagnostics
-**Prompt:** "Comment out diagnostic output instead of removing"
+**Prompt (reconstructed):** "Actually, instead of removing the diagnostic code, can you just comment it out so we can re-enable it later if needed?"
 **Commit:** 51a8227 - Comment out diagnostic output instead of removing
 **Changes:**
 - Kept diagnostic code but commented out for easy re-enabling
 - Clean console output while preserving debugging capability
 
 ### Dynamic Output Filenames
-**Prompt:** "Change output filename to match input CSV filename"
+**Prompt (reconstructed):** "Make the output PDF filename match the input CSV filename (like BigRoom.csv -> BigRoom.pdf)"
 **Commit:** 63b4ea9 - Change output filename to match input CSV filename
 **Changes:**
 - Output PDF now uses same base name as input CSV file
@@ -131,7 +133,7 @@ This file tracks all user prompts and changes throughout the project development
 - Default line_plot.pdf used when no input file provided
 
 ### Organize Archives
-**Prompt:** "Add all project files and organize archives"
+**Prompt (reconstructed):** "Add all the CSV files and PDFs to git and organize the archive files into a subfolder"
 **Commit:** a03171d - Add all project files and organize archives
 **Changes:**
 - Added all CSV input files and generated PDFs
@@ -151,8 +153,17 @@ This file tracks all user prompts and changes throughout the project development
 **Response:** Created chronological development timeline
 
 ### Track Future Prompts
-**Prompt:** "in future, please include the literal prompts in the git repo somehow, perhaps in a notes file"
+**Prompt (actual):** "in future, please include the literal prompts in the git repo somehow, perhaps in a notes file"
 **Response:** Created this PROMPTS.md file to track all user prompts and development
+
+### Track Prompts Globally  
+**Prompt (actual):** "please apply this rule globally via CLAUDE.md or whatever is most appropriate"
+**Commit:** ebe9141 - Update global CLAUDE.md to track prompts in all projects
+**Response:** Updated global CLAUDE.md to include prompt tracking rule for all projects
+
+### Reconstruct Historical Prompts
+**Prompt (actual):** "can you try to reconstruct the prompts either from a local file or by whatever means from the git history for this project? even approximately would help"
+**Response:** Reconstructed approximate prompts based on commit messages and code changes
 
 ---
 
