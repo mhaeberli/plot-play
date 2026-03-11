@@ -32,7 +32,13 @@
       "Bash(git commit -m \"Update segment length format to use space instead of hyphen\n\n- Changed format from feet''-inches\"\" to feet'' inches\"\"\n- Example: 6'' 3.2\"\" instead of 6''-3.2\"\"\n- Cleaner, more standard formatting for measurements\")",
       "Bash(git commit -m \"Remove verbose diagnostic output during plotting\n\n- Removed per-step movement diagnostics (P0→P1, cumulative, net from start)\n- Kept comprehensive summary statistics at the end\n- Cleaner, less cluttered console output\n- PDF still contains all visual information including segment lengths\")",
       "Bash(git commit -m \"Comment out diagnostic output instead of removing\n\n- Kept diagnostic code but commented out for easy re-enabling\n- Clean console output while preserving debugging capability\n- Can uncomment the print statements if detailed tracking is needed\")",
-      "Bash(git commit -m \"Change output filename to match input CSV filename\n\n- Output PDF now uses same base name as input CSV file\n- xxx.csv → xxx.pdf\n- Archival system works with dynamic filenames\n- Default line_plot.pdf used when no input file provided\n- Maintains same archival timestamp naming convention\")"
+      "Bash(git commit -m \"Change output filename to match input CSV filename\n\n- Output PDF now uses same base name as input CSV file\n- xxx.csv → xxx.pdf\n- Archival system works with dynamic filenames\n- Default line_plot.pdf used when no input file provided\n- Maintains same archival timestamp naming convention\")",
+      "Bash(git commit -m \"Add all project files and organize archives\n\n- Added all CSV input files and generated PDFs\n- Added text summary files for each plot\n- Organized all archive files into line_plot_archives/ subfolder\n- Cleaned up Big Room file naming\n- Complete project snapshot with all plotting examples\")",
+      "Bash(git log --reverse --format=\"%h %s\")",
+      "Bash(git add PROMPTS.md)",
+      "Bash(git commit -m \"Add PROMPTS.md to track all user prompts and development history\n\n- Documents all prompts from project inception\n- Tracks changes made in response to each prompt\n- Links prompts to specific git commits\n- Provides template for documenting future prompts\n- Helps maintain complete project development history\")",
+      "Read(/Users/mhaeberli/.claude/**)",
+      "Bash(git commit -m \"Update global CLAUDE.md to track prompts in all projects\n\n- Added rule to track all user prompts in PROMPTS.md files\n- Documents timestamp, exact prompt text, commit hash, and changes\n- Will apply to all future projects automatically\n- Ensures complete development history is maintained\")"
     ],
     "deny": [],
     "ask": []
