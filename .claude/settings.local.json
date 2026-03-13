@@ -38,7 +38,9 @@
       "Bash(git add PROMPTS.md)",
       "Bash(git commit -m \"Add PROMPTS.md to track all user prompts and development history\n\n- Documents all prompts from project inception\n- Tracks changes made in response to each prompt\n- Links prompts to specific git commits\n- Provides template for documenting future prompts\n- Helps maintain complete project development history\")",
       "Read(/Users/mhaeberli/.claude/**)",
-      "Bash(git commit -m \"Update global CLAUDE.md to track prompts in all projects\n\n- Added rule to track all user prompts in PROMPTS.md files\n- Documents timestamp, exact prompt text, commit hash, and changes\n- Will apply to all future projects automatically\n- Ensures complete development history is maintained\")"
+      "Bash(git commit -m \"Update global CLAUDE.md to track prompts in all projects\n\n- Added rule to track all user prompts in PROMPTS.md files\n- Documents timestamp, exact prompt text, commit hash, and changes\n- Will apply to all future projects automatically\n- Ensures complete development history is maintained\")",
+      "Bash(git log --reverse --format=\"%h|%s\")",
+      "Bash(git commit -m \"Reconstruct approximate prompts from Session 1 based on commit patterns\n\n- Analyzed commit messages and code changes to infer likely prompts\n- Marked Session 1 prompts as ''reconstructed'' vs actual\n- Session 2 prompts are actual verbatim from current session\n- Added note explaining reconstruction methodology\n- Provides more complete development history even without original prompts\")"
     ],
     "deny": [],
     "ask": []
